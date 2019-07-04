@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+  var board = {
+    name: 'Kanban Board',
+    addColumn: function(column) {
+      this.element.appendChild(column.element);
+      initSortable(column.id); //About this feature we will tell later
+    },
+    element: document.querySelector('#board .column-container')
+  };
 
 
 

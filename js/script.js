@@ -72,6 +72,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-
+  // drag and drop
+  function initSortable(id) {
+    var el = document.getElementById(id);
+    var sortable = Sortable.create(el, {
+      group: 'kanban',
+      sort: true
+    });
+  }
+        // drag and drop event
+        document.querySelector('#board .create-column').addEventListener('click', function() {
+          var name = prompt('Enter a column name');
+          var column = new Column(name);
+          board.addColumn(column);
+      });
+  
 
 });

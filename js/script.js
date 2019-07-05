@@ -55,7 +55,7 @@ function Card(description) {
   this.element.querySelector('.card').addEventListener('click', function (event) {
     event.stopPropagation();
 
-    if (event.target.classList.contains('btn-delete')) {
+    if (event.target.classList.contains('card-delete')) {
       self.removeCard();
     }
   })
@@ -79,8 +79,10 @@ var board = {
 function initSortable(id) {
   var el = document.getElementById(id);
   var sortable = Sortable.create(el, {
-    group: 'kanban',
-    sort: true
+    group: 'shared',
+    sort: true,
+    animation: 130,
+    ghostClass: 'blue-background-class'
   });
 }
 

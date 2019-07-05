@@ -24,11 +24,13 @@ body {
 .column-container {
 	justify-content: center;
 	margin: 20px auto;
-	max-width: 100%;
+	// max-width: 100%;
+	display: flex;
+	overflow-x: auto;
  }
 .column-container > div {
   display: inline-flex;
-  flex-grow: 1;
+  flex-grow: 0;
 }
 .card {
   border-bottom: 1px solid rgba(0,0,0,.12);
@@ -101,6 +103,13 @@ li {
 }
 
 @media (max-width: 767px){
+  .column-container{
+    justify-content: start;
+  }
+	.column-container > div {
+	  display: inline-flex;
+	  // flex-grow: 2;
+	}
   .card-delete {
     display: inline-block;
   }

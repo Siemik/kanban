@@ -4,9 +4,9 @@ body { background-color: #F7F9FB; font-family: 'Raleway', sans-serif; background
 
 .column { box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); border-radius: 7px; background-color: white; max-width: 100%; width: 310px; height: 400px; overflow: auto; margin: 10px; position: relative; }
 
-.column-container { justify-content: center; margin: 20px auto; max-width: 100%; }
+.column-container { justify-content: center; margin: 20px auto; max-width: 100%; display: flex; overflow-x: auto; }
 
-.column-container > div { display: inline-flex; flex-grow: 1; }
+.column-container > div { display: inline-flex; flex-grow: 0; }
 
 .card { border-bottom: 1px solid rgba(0, 0, 0, 0.12); transition: background 0.3s cubic-bezier(0.25, 0.8, 0.5, 1); font-family: 'Raleway', sans-serif; font-size: 1.5em; display: flex; justify-content: space-between; }
 
@@ -29,3 +29,6 @@ li { padding: 0; margin: 0; text-align: center; }
 .column-title { border-bottom: 2px solid rgba(0, 0, 0, 0.12); margin: 0 auto; padding: 15px 0; }
 
 .card:hover .card-delete { display: inline-block; }
+
+@media (max-width: 767px) { .column-container > div { display: inline-flex; flex-grow: 1; }
+  .card-delete { display: inline-block; } }
